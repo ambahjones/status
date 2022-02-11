@@ -1,12 +1,13 @@
 import './App.css';
-//import Content from './Content';
 import Nav from './Nav.js';
+import Footer from './Footer.js';
 
 
 export default function App() {
   return (
-    <div className='my-4 mx-auto md:w-2/3'>
+    <div className='flex flex-wrap content-between min-h-screen mt-4 mx-auto md:w-3/4'>
       <Nav />
+      <Footer />
     </div>
   );
 }

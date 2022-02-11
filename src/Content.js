@@ -4,32 +4,24 @@ import History from './History.js';
 import Updates from './Updates.js';
 
 export default function Content(props) {
-    console.log(props);
     let page = props.page;
-    console.log(page);
     if(page === 'history') {
         return (
-        <div className='w-3/5 my-4 mx-auto'>
+        <main className='w-11/12 my-4 mx-auto md:w-5/6'>
             <History />
-        </div>
+        </main>
     );
     } else if(page === 'updates') {
         return (
-        <div className='w-3/5 my-4 mx-auto'>
+        <main className='w-11/12 my-4 mx-auto md:w-5/6'>
             <Updates />
-        </div>
+        </main>
     );
     } else {
         return (
-        <div className='w-3/5 my-4 mx-auto'>
+        <main className='w-11/12 my-4 mx-auto md:w-5/6'>
             <Status />
-        </div>
+        </main>
     );
     }
-    
-    /*return (
-        <div className='w-3/5 mx-auto'>
-            <Status />
-        </div>
-    );*/
 }
