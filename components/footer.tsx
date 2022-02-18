@@ -1,10 +1,25 @@
 const navigation = [
-  { name: 'Home', href: 'https://www.getshifter.io/', current: true },
-  { name: 'Contact', href: 'https://www.getshifter.io/', current: false },
-  { name: 'Support', href: 'https://support.getshifter.io/', current: false },
+  {
+    name: 'Home',
+    href: 'https://www.getshifter.io/',
+    current: true,
+    target: '',
+  },
+  {
+    name: 'Contact',
+    href: 'https://www.getshifter.io/',
+    current: false,
+    target: '',
+  },
+  {
+    name: 'Support',
+    href: 'https://support.getshifter.io/',
+    current: false,
+    target: '',
+  },
 ]
 
-function classNames(...classes) {
+function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')
 }
 
@@ -28,7 +43,7 @@ export default function Footer() {
         ))}
       </div>
       <div className="h-1/2">
-        <span>service by Company</span>
+        <span>Shifter</span>
       </div>
     </footer>
   )
