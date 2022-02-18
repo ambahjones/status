@@ -21,7 +21,7 @@ export default function Changelog({ posts }: ChangelogsProps) {
     <section className="pb-6">
       <h1 className="text-center text-3xl">Changelog</h1>
       <h2 className="mt-8 mb-1 text-lg font-bold">February 2022</h2>
-      {posts.map((post, i) => {
+      {posts.map((post: any, i: number) => {
         return (
           <Post
             key={i}
