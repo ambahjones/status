@@ -1,25 +1,11 @@
-const axios = require('axios')
 const siteID = process.env.HEADLESS_SITE_ID
 const headlessURL = `hl-b.getshifter.co`
 const baseURL = `https://${siteID}.${headlessURL}`
 const restURL = `${baseURL}/wp-json/wp/v2`
 
-export default function Changelog({ url = restURL }) {
-  async function getPosts() {
-    try {
-      const posts = await axios({
-        method: 'get',
-        url: `${url}/posts`,
-      })
+export default function Changelog({ posts = [], url = restURL }) {
 
-
-      posts.data.map({})
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-  getPosts()
+  console.log(posts);
 
   return (
     <section className="pb-6">
