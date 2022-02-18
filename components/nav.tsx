@@ -16,7 +16,7 @@ const navigation = [
   },
 ]
 
-function classNames(...classes) {
+function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')
 }
 
@@ -45,14 +45,14 @@ export default function Example() {
                   <a href="/">
                     <img
                       className="block h-8 w-auto lg:hidden"
-                      src="shifter.svg"
+                      src="/shifter.svg"
                       alt="Workflow"
                     />
                   </a>
                   <a href="/">
                     <img
                       className="hidden h-8 w-auto lg:block"
-                      src="shifter.svg"
+                      src="/shifter.svg"
                       alt="Workflow"
                     />
                   </a>
