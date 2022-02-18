@@ -6,7 +6,7 @@ export interface PostProps {
 function Post({ title, content }: PostProps) {
   return (
     <article className="container mx-auto">
-      <h3 className="font-bold">{title}</h3>
+      <h2 className="font-bold">{title}</h2>
       <div dangerouslySetInnerHTML={{ __html: `${content}` }} />
     </article>
   )
