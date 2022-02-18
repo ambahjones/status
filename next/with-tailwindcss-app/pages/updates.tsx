@@ -1,34 +1,18 @@
-import axios from 'axios'
 import Head from 'next/head'
 import Nav from '../components/nav'
 import Changelog from '../components/changelog'
 import Footer from '../components/footer'
 
-console.log(process.env.NEXT_PUBLIC_HEADLESS_SITE_ID); //where does this come from?
 const siteID = process.env.NEXT_PUBLIC_HEADLESS_SITE_ID
 const headlessURL = `hl-b.getshifter.co`
 const baseURL = `https://${siteID}.${headlessURL}`
 const restURL = `${baseURL}/wp-json/wp/v2`
 
-async function getPosts() {
-  try {
-    const results = await axios.get(`${restURL}/posts?category=4`) //.then action after axios call? would getStaticProps be of any value here? or get(whatever) 
-    console.log(await results.data);
-  } catch (error) {
-    console.error(error)
-  }
+export interface UpdatesProps {
+  posts?: Record<string, unknown>
 }
 
-export async function getStaticProps() {
-  const posts = await getPosts();
-  console.log(posts);
-
-  return { props: { posts } };
-}
-
-export default function ChangelogPage({ posts = getPosts() }) {
-
-  getPosts();
+export default function Updates({ posts }: UpdatesProps) {
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -40,10 +24,26 @@ export default function ChangelogPage({ posts = getPosts() }) {
       <Nav />
 
       <main className="flex w-full flex-1 flex-col items-center px-20">
-        <Changelog />
+        <Changelog posts={posts} />
       </main>
 
       <Footer />
     </div>
   )
+}
+
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+  const res = await fetch(`${restURL}/posts?category=4`)
+  console.log(`${restURL}/posts?category=4`);
+  const posts = await res.json()
+
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      posts,
+    },
+  }
 }

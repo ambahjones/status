@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 const navigation = [
   { name: 'System Status', href: '/', current: true },
   { name: 'Status History', href: '/history', current: false },
-  { name: 'Changelog', href: '/changelog', current: false },
+  { name: 'Updates', href: '/updates', current: false },
   {
     name: 'www.getshifter.io',
     href: 'https://www.getshifter.io/',
