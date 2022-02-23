@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router'
+
 const navigation = [
   {
     name: 'Home',
@@ -24,6 +26,8 @@ function classNames(...classes: any) {
 }
 
 export default function Footer() {
+  const router = useRouter();
+
   return (
     <footer className="flex h-24 w-full flex-wrap justify-evenly">
       <div className="flex h-2/5 w-full justify-evenly md:w-2/3">
@@ -33,7 +37,7 @@ export default function Footer() {
             href={item.href}
             target={item.target}
             className={classNames(
-              item.current ? 'text-gray-400' : 'text-gray-400 hover:text-black',
+              router.pathname == `${item.href}` ? 'text-gray-400' : 'text-gray-400 hover:text-black',
               'hover:text-black'
             )}
             aria-current={item.current ? 'page' : undefined}

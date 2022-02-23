@@ -17,13 +17,13 @@ export default function Updates({ posts }: UpdatesProps) {
   return (
     <div className="flex min-h-screen flex-col">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Shifter Changelog</title>
+        <link rel="icon" href="/shifter.svg" />
       </Head>
 
       <Nav />
 
-      <main className="flex w-full flex-1 flex-col items-center px-20">
+      <main className="flex w-full flex-1 flex-col items-center px-6 sm:px-20">
         <Changelog posts={posts} />
       </main>
 
