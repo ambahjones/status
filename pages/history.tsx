@@ -9,6 +9,10 @@ export default function History() {
       <Head>
         <title>Status History</title>
         <link rel="icon" href="/shifter.svg" />
+        <meta property='og:title' content='Shifter Status History' />
+        <meta property='og:type' content='website' />
+        <meta property='og:image' content='/shifter.svg' />
+        <meta property='og:url' content='https://dev-status-getshifter.netlify.app/history/' />
       </Head>
 
       <Nav />

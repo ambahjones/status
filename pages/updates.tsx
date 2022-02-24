@@ -19,6 +19,10 @@ export default function Updates({ posts }: UpdatesProps) {
       <Head>
         <title>Shifter Changelog</title>
         <link rel="icon" href="/shifter.svg" />
+        <meta property='og:title' content='Shifter Changelog Updates' />
+        <meta property='og:type' content='website' />
+        <meta property='og:image' content='/shifter.svg' />
+        <meta property='og:url' content='https://dev-status-getshifter.netlify.app/updates/' />
       </Head>
 
       <Nav />
